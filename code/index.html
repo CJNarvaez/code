@@ -1,67 +1,42 @@
-<!doctype html>
+<link rel="import" href="../chart-js/chart-js.html">
+<link rel="import" href="../google-map/google-map.html">
 
-<html>
-<head>
-  <title>code</title>
+<polymer-element name="my-element">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-capable" content="yes">
+  <template>
+    <style>    
+      :host {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+      }
+      #google_map {
+        width: 400px;
+        height: 400px;
+        display: block;
+        left: 500px;
+        top: 110px;
+        position: absolute;
+      }
+      #chart_js {
+        width: 300px;
+        height: 200px;
+        left: 30px;
+        top: 120px;
+        position: absolute;
+      }
+    </style>
+    <chart-js kind="Bar" id="chart_js"></chart-js>
+    <google-map latitude="37.77058794864539" longitude="-122.66249250976563" id="google_map"></google-map>
+  </template>
 
-  <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+  <script>
 
-  <link rel="import" href="bower_components/iron-icons/iron-icons.html">
-  <link rel="import" href="bower_components/paper-toolbar/paper-toolbar.html">
-  <!-- <link rel="import" href="bower_components/font-roboto/roboto.html"> -->
-  <link rel="import" href="bower_components/paper-button/paper-button.html">
-  <link rel="import" href="bower_components/paper-checkbox/paper-checkbox.html">
-  <link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html">
-  <link rel="import" href="bower_components/paper-fab/paper-fab.html">
-  <link rel="import" href="bower_components/paper-tabs/paper-tabs.html">
-  <link rel="import" href="bower_components/paper-toast/paper-toast.html">
+    Polymer({
+      
+    });
 
-  <link rel="stylesheet" href="styles.css">
-</head>
+  </script>
 
-<body unresolved>
-  <paper-toolbar>
-    <paper-icon-button icon="menu"></paper-icon-button>
-    <span class="flex">code toolbar</span>
-    <paper-fab icon="add"></paper-fab>
-  </paper-toolbar>
-
-  <section>
-    <p>A simple Polymer
-      <a href="https://elements.polymer-project.org/browse?package=paper-elements">
-      paper elements</a> example that demonstrates using <code>&lt;paper-toolbar&gt;,
-      &lt;paper-button&gt;, &lt;paper-checkbox&gt;, &lt;paper-icon-button&gt;,
-      &lt;paper-fab&gt;, &lt;paper-tabs&gt;</code>, and <code>&lt;paper-toast&gt;</code>.
-    </p>
-    <paper-checkbox label="Got it!"></paper-checkbox>
-  </section>
-
-  <section>
-    <paper-tabs selected="0">
-      <paper-tab>Tab one</paper-tab>
-      <paper-tab>Tab two</paper-tab>
-      <paper-tab>Tab three</paper-tab>
-    </paper-tabs>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-      non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    </p>
-  </section>
-
-  <section>
-    <template id="toastGroup" is="dom-bind">
-      <paper-button raised right on-click="showToast">Show Toast</paper-button>
-      <paper-toast id="toast" text="Sample toast here."></paper-toast>
-    </template>
-  </section>
-
-  <script src="main.js"></script>
-</body>
-</html>
+</polymer-element>
